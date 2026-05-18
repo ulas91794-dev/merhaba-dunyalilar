@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gazi Mustafa Kemal Atatürk - Ultra Anı Sitesi</title>
+    <style>
+        /* Modern & Premium Siber-Anıt Tasarımı */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { background-color: #0b0c10; color: #c5c6c7; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Neon Altın ve Kırmızı Detaylar */
+        :root { --gold: #c5a880; --dark-blue: #1f2833; --bright: #66fcf1; --red: #e63946; }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 3px solid var(--gold);
+            box-shadow: 0 5px 30px rgba(197, 168, 128, 0.2);
+        }
+
+        header h1 { font-size: 2.2rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        header p { font-size: 1.1rem; color: var(--gold); font-style: italic; letter-spacing: 1px; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 30px 15px; }
+
+        /* --- ATATÜRK SES BÖLÜMÜ --- */
+        .audio-section {
+            background: rgba(31, 40, 51, 0.6);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 0 20px rgba(197, 168, 128, 0.1);
+        }
+        .audio-section h3 { color: #fff; margin-bottom: 15px; font-size: 1.3rem; letter-spacing: 1px; }
+        .play-btn {
+            background: linear-gradient(135deg, var(--gold), #9a7b56);
+            color: #000; border: none; padding: 15px 35px;
+            font-size: 1.1rem; font-weight: bold; border-radius: 30px;
+            cursor: pointer; box-shadow: 0 0 15px rgba(197,168,128,0.4);
+            transition: 0.3s; width: 100%; max-width: 300px;
+        }
+        .play-btn:active { transform: scale(0.98); box-shadow: 0 0 5px rgba(197,168,128,0.2); }
+
+        /* --- VİDEO BÖLÜMÜ --- */
+        .video-section { margin-bottom: 40px; }
+        .video-section h2 { color: var(--gold); border-left: 5px solid var(--red); padding-left: 15px; margin-bottom: 20px; font-size: 1.6rem; text-transform: uppercase; }
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+            border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        /* --- FOTOĞRAF GALERİSİ --- */
+        .gallery-section { margin-bottom: 40px; }
+        .gallery-section h2 { color: var(--gold); border-left: 5px solid var(--red); padding-left: 15px; margin-bottom: 20px; font-size: 1.6rem; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: var(--dark-blue); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .card img { width: 100%; height: 350px; object-fit: cover; display: block; border-bottom: 2px solid var(--gold); }
+        .card-body { padding: 15px; }
+        .card-body h4 { color: #fff; margin-bottom: 5px; font-size: 1.1rem; }
+        .card-body p { color: #8892b0; font-size: 0.9rem; }
+
+        /* --- KRONOLOJİK ZAMAN TÜNELİ --- */
+        .timeline { margin-bottom: 40px; padding: 10px; position: relative; }
+        .timeline::before { content: ''; position: absolute; left: 20px; top: 0; height: 100%; width: 2px; background: var(--gold); }
+        .timeline-item { position: relative; padding-left: 45px; margin-bottom: 30px; }
+        .timeline-dot { position: absolute; left: 14px; top: 5px; width: 14px; height: 14px; background: var(--red); border-radius: 50%; box-shadow: 0 0 8px var(--red); }
+        .timeline-date { color: var(--gold); font-weight: bold; font-size: 1.1rem; margin-bottom: 3px; }
+        .timeline-content h4 { color: #fff; margin-bottom: 5px; }
+        .timeline-content p { color: #8892b0; font-size: 0.95rem; }
+
+        footer { text-align: center; padding: 30px; background: #050508; border-top: 1px solid rgba(255,255,255,0.05); color: #444; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Gazi Mustafa Kemal Atatürk</h1>
+        <p>"Benim nâçiz vücudum birgün elbet toprak olacaktır, fakat Türkiye Cumhuriyeti ilelebed payidar kalacaktır."</p>
+    </header>
+
+    <div class="container">
+
+        <section class="audio-section">
+            <h3>Atatürk'ün Kendi Sesinden Tarihi Hitap</h3>
+            <p style="color: #8892b0; font-size: 0.9rem; margin-bottom: 15px;">10. Yıl Nutku'nun orijinal ses kaydından ikonik kapanış cümlesi.</p>
+            <button class="play-btn" id="audio-btn">SESİ OYNAT 🔊</button>
+            <audio id="ata-audio" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Ataturk_-_Ne_mutlu_Turkum_diyene.ogg"></audio>
+        </section>
+
+        <section class="video-section">
+            <h2>Restore Edilmiş Tarihi Videolar</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/fW4S_b_13_4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2>Nadir ve İkonik Fotoğraflar</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1571172703734-4322a6697bb1?q=80&w=600" alt="Atatürk Kalpaklı">
+                    <div class="card-body">
+                        <h4>Kurtuluş Savaşı Yılları</h4>
+                        <p>Milli Mücadele döneminde kalpağıyla milletine önderlik eden Başkomutan.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?q=80&w=600" alt="Atatürk Yazı Tahtası Başında">
+                    <div class="card-body">
+                        <h4>Harf Devrimi (1928)</h4>
+                        <p>Kara tahta başında yeni Türk harflerini bizzat millete öğretirken.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1610123598147-f632519942ef?q=80&w=600" alt="Atatürk Portre">
+                    <div class="card-body">
+                        <h4>Modern Türkiye'nin Mimarı</h4>
+                        <p>Cumhuriyetin modern, şık ve vizyoner yüzünü temsil eden eşsiz bir portre.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="timeline">
+            <h2>Zaman Tüneli</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">1881</div>
+                <div class="timeline-content">
+                    <h4>Selanik'te Doğan Güneş</h4>
+                    <p>Selanik'te, Ali Rıza Efendi ve Zübeyde Hanım'ın evladı olarak dünyaya gözlerini açtı.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">19 Mayıs 1919</div>
+                <div class="timeline-content">
+                    <h4>Samsun'a Çıkış</h4>
+                    <p>Bandırma Vapuru ile Samsun'a ayak basarak Milli Mücadele meşalesini yaktı.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">29 Ekim 1923</div>
+                <div class="timeline-content">
+                    <h4>Cumhuriyetin İlanı</h4>
+                    <p>Egemenliğin kayıtsız şartsız millete ait olduğunu dünyaya ilan ederek Türkiye Cumhuriyeti'ni kurdu.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">10 Kasım 1938</div>
+                <div class="timeline-content">
+                    <h4>Sonsuzluğa Uğurlanış</h4>
+                    <p>Saat 09.05'te Dolmabahçe Sarayı'nda gözlerini yumdu ama fikirleriyle sonsuza dek ölümsüzleşti.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        Gazi Mustafa Kemal Atatürk Anısına Saygıyla. © 2026
+    </footer>
+
+    <script>
+        // Ses Oynatma Mantığı
+        const audio = document.getElementById('ata-audio');
+        const btn = document.getElementById('audio-btn');
+
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                btn.innerText = "SESİ DURDUR ⏸️";
+                btn.style.background = "linear-gradient(135deg, #e63946, #b22222)";
+            } else {
+                audio.pause();
+                audio.currentTime = 0; // Başa sar
+                btn.innerText = "SESİ OYNAT 🔊";
+                btn.style.background = "linear-gradient(135deg, var(--gold), #9a7b56)";
+            }
+        });
+
+        // Ses bitince butonu eski haline getir
+        audio.addEventListener('ended', () => {
+            btn.innerText = "SESİ OYNAT 🔊";
+            btn.style.background = "linear-gradient(135deg, var(--gold), #9a7b56)";
+        });
+    </script>
+</body>
+</html>
+
