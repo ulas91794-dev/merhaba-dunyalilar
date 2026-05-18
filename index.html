@@ -11,7 +11,7 @@
         :root { --gold: #d4af37; --crimson: #9b1c1c; --card-bg: #1a1a24; }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(13,13,17,1)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a24"/><circle cx="50" cy="50" r="40" stroke="%23d4af37" stroke-width="1" fill="none" opacity="0.1"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(13,13,17,1)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a24"/><circle cx="50" cy="50" r="40" stroke="%23d4af37" stroke-width="1" fill="none" opacity="0.1"/></svg>');
             padding: 60px 20px; text-align: center; border-bottom: 2px solid var(--gold);
         }
 
@@ -20,40 +20,37 @@
 
         .wrapper { max-width: 800px; margin: 0 auto; padding: 20px 15px; }
 
-        /* --- GARANTİ SES BÖLÜMÜ --- */
+        /* --- 1934 MECLİS KONUŞMASI PANELİ --- */
         .panel {
             background: var(--card-bg); border: 1px solid rgba(212,175,55,0.3);
             border-radius: 16px; padding: 25px; text-align: center; margin-bottom: 35px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
-        .panel h3 { color: #fff; margin-bottom: 10px; font-size: 1.2rem; }
+        .panel h3 { color: #fff; margin-bottom: 8px; font-size: 1.2rem; }
         
-        .play-control {
-            background: linear-gradient(135deg, var(--gold), #aa8413);
-            color: #000; border: none; padding: 16px 30px;
-            font-size: 1.1rem; font-weight: bold; border-radius: 50px;
-            cursor: pointer; width: 100%; max-width: 280px; margin-top: 15px;
-            box-shadow: 0 5px 15px rgba(212,175,55,0.3); transition: 0.2s;
+        .audio-container {
+            position: relative; width: 100%; max-width: 320px; height: 180px; 
+            margin: 15px auto 0 auto; border-radius: 12px; overflow: hidden;
+            border: 1px solid rgba(212,175,55,0.2);
         }
-        .play-control:active { transform: scale(0.97); }
+        .audio-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* --- GARANTİ VİDEO BÖLÜMÜ --- */
+        /* --- TOLGA ÖRNEK BELGESEL BÖLÜMÜ --- */
         .section-title { color: var(--gold); border-left: 4px solid var(--crimson); padding-left: 12px; margin: 30px 0 20px 0; font-size: 1.4rem; text-transform: uppercase; }
         
         .video-box {
             position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
             border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* --- SIFIR HATA RESİM GALERİSİ (CSS ÇİZİM VE GÜVENLİ COĞRAFYA) --- */
+        /* --- SİLÜET GALERİSİ --- */
         .gallery-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
-        
-        /* O yeşil köpekler falan uçsun diye harici resim yerine asil silüet ve vektör yer tutucular koydum */
         .photo-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
         .photo-placeholder {
-            width: 100%; height: 240px; 
-            background: linear-gradient(45deg, #111, #222);
+            width: 100%; height: 200px; 
+            background: linear-gradient(45deg, #161622, #252538);
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             border-bottom: 2px solid var(--gold); color: var(--gold);
         }
@@ -83,21 +80,21 @@
     <div class="wrapper">
 
         <div class="panel">
-            <h3>Atatürk'ün Kendi Sesinden Tarihi Hitap</h3>
-            <p style="color: #94a3b8; font-size: 0.9rem;">10. Yıl Nutku'nun en ikonik kapanış cümlesi.</p>
-            <button class="play-control" id="trigger-audio">SESİ OYNAT 🔊</button>
+            <h3>Atatürk'ün En Net Ses Kaydı</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem;">1934 yılı meclis açılış konuşması tarihi hitabı.</p>
             
-            <audio id="core-audio" src="https://archive.org/download/ataturk_ses/ataturk_nutuk_son.mp3" preload="auto"></audio>
+            <div class="audio-container">
+                <iframe src="https://www.youtube.com/embed/ADO10_VQh38" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
 
-        <div class="section-title">Tarihi Belgesel Videoları</div>
+        <div class="section-title">Tolga Örnek - Atatürk Belgeseli</div>
         <div class="video-box">
-            <iframe src="https://www.youtube.com/embed/8yL7G3u9_U8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/WM6ENAF_b24" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <div class="section-title">İkonik Dönem İncelemeleri</div>
+        <div class="section-title">Tarihi İncelemeler</div>
         <div class="gallery-grid">
-            
             <div class="photo-card">
                 <div class="photo-placeholder">
                     <span>🎖️</span>
@@ -115,40 +112,34 @@
                     <div style="font-weight: bold; letter-spacing: 1px;">EĞİTİM DEVRİMİ</div>
                 </div>
                 <div class="photo-desc">
-                    <h4>Başöğretmen Atatürk (1928)</h4>
+                    <h4>Başöğretmen Atatürk</h4>
                     <p>Harf Devrimi ile birlikte kara tahta başına geçerek yeni Türk alfabesini bizzat halka öğreten vizyoner lider.</p>
                 </div>
             </div>
-
         </div>
 
         <div class="section-title">Kronolojik Akış</div>
         <div class="timeline-box">
-            
             <div class="step">
                 <div class="step-date">1881</div>
                 <div class="step-title">Selanik'te Başlayan Ömür</div>
                 <div class="step-text">Selanik'te doğdu. Mahalle mektebinden sonra askeri rüştiyeye girerek dehasını kanıtlamaya başladı.</div>
             </div>
-
             <div class="step">
                 <div class="step-date">19 Mayıs 1919</div>
                 <div class="step-title">İstiklal Meşalesi</div>
                 <div class="step-text">Bandırma Vapuru ile Samsun'a çıkarak Türk milletinin esaret altına girmeyeceğini tüm dünyaya gösterdi.</div>
             </div>
-
             <div class="step">
                 <div class="step-date">29 Ekim 1923</div>
                 <div class="step-title">Cumhuriyetin İlanı</div>
                 <div class="step-text">"Efendiler, yarın Cumhuriyeti ilan edeceğiz" diyerek modern Türkiye Cumhuriyeti devletini kurdu.</div>
             </div>
-
             <div class="step">
                 <div class="step-date">10 Kasım 1938</div>
                 <div class="step-title">Ebedi Ölümsüzlük</div>
                 <div class="step-text">Dolmabahçe Sarayı'nda fani hayata veda etti ancak fikirleri ve inkılaplarıyla kalplerde yaşamaya devam ediyor.</div>
             </div>
-
         </div>
 
     </div>
@@ -157,32 +148,5 @@
         Gazi Mustafa Kemal Atatürk Anısına Saygıyla. © 2026
     </footer>
 
-    <script>
-        const audioObj = document.getElementById('core-audio');
-        const ctrlBtn = document.getElementById('trigger-audio');
-
-        ctrlBtn.addEventListener('click', () => {
-            if (audioObj.paused) {
-                audioObj.play().catch(err => {
-                    alert("Tarayıcın sesi engelledi, lütfen ekrana bir kez dokunup tekrar dene reis!");
-                });
-                ctrlBtn.innerText = "SESİ DURDUR ⏸️";
-                ctrlBtn.style.background = "linear-gradient(135deg, var(--crimson), #661010)";
-                ctrlBtn.style.color = "#fff";
-            } else {
-                audioObj.pause();
-                audioObj.currentTime = 0;
-                ctrlBtn.innerText = "SESİ OYNAT 🔊";
-                ctrlBtn.style.background = "linear-gradient(135deg, var(--gold), #aa8413)";
-                ctrlBtn.style.color = "#000";
-            }
-        });
-
-        audioObj.addEventListener('ended', () => {
-            ctrlBtn.innerText = "SESİ OYNAT 🔊";
-            ctrlBtn.style.background = "linear-gradient(135deg, var(--gold), #aa8413)";
-            ctrlBtn.style.color = "#000";
-        });
-    </script>
 </body>
 </html>
